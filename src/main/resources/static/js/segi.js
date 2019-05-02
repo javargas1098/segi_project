@@ -3,27 +3,47 @@ function setTable() {
 	axios.get('/segi/intelmqjson').then(function (response) {
 // console.log(response.data);
     	var json = response.data;
-    	console.log(json);
-    	
-// var par = document.getElementById("actual2");
-//     
-// $("#actual2").empty();
-//        
-// for (m in json) {
-// // console.log(m);
-// var fila = document.createElement("button");
-// fila.setAttribute("class", "dropdown-item");
-// fila.setAttribute("onclick","renameInputDropdown('"+m+"'); return false;");
-// fila.innerHTML = m + ": " + json[m];
-// par.appendChild(fila);
-// // console.log(response.data[m]);
-// }
-//        
-// var par = document.getElementById("actualButton");
-        
-    
-            
-        
+   
+		 var table = document.getElementById("table");
+		  
+		 $("#table").empty();
+		 
+		 var thead = document.createElement("thead");
+		 var tr = document.createElement("tr");
+		 
+		 
+		 for (m in json) {
+			 var th = document.createElement("th");
+			 th.innerHTML = m;
+			 tr.appendChild(th);
+		 }
+		 thead.appendChild(tr);
+		 table.appendChild(thead);
+		        
+		 //Tbody
+		 
+		 
+		 var tbody = document.createElement("tbody");
+		 var tr = document.createElement("tr");
+		 
+		 
+		 for (m in json) {
+			 var td = document.createElement("td");
+			 td.innerHTML = json[m];
+			 tr.appendChild(td);
+		 }
+		 tbody.appendChild(tr);
+		 table.appendChild(tbody);
+		        
+		 
+		 
+		 
+		 
+		 var par = document.getElementById("actualButton");
+		 $(document).ready(function() {
+				$('#table').DataTable();
+			});
+		 
     });
 	
 }

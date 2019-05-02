@@ -17,6 +17,9 @@ public class ApiController {
 	@GetMapping("/intelmqjson")
 	public ResponseEntity<?> getIntelmq() {
 		try {
+			
+			
+			
 			DataInputStream dis = new DataInputStream(new FileInputStream("D:\\Documentos\\intel.txt"));
 
 			byte[] datainBytes = new byte[dis.available()];
