@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/currency")
+@RequestMapping("/segi")
 public class ApiController {
 
 	@GetMapping("/intemqjson")
 	public ResponseEntity<?> getIntelmq() {
 		try {
-			DataInputStream dis = new DataInputStream(new FileInputStream("c:\\logging.log"));
+			DataInputStream dis = new DataInputStream(new FileInputStream("c:\\Documents\\intel.txt"));
 
 			byte[] datainBytes = new byte[dis.available()];
 			dis.readFully(datainBytes);
