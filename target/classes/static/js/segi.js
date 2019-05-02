@@ -1,6 +1,6 @@
 function setTable() {
 	
-	axios.get('/segi/intemqjson').then(function (response) {
+	axios.get('/segi/intelmqjson').then(function (response) {
 // console.log(response.data);
     	var json = response.data;
     	console.log(json);

@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/segi")
 public class ApiController {
 
-	@GetMapping("/intemqjson")
+	@GetMapping("/intelmqjson")
 	public ResponseEntity<?> getIntelmq() {
 		try {
-			DataInputStream dis = new DataInputStream(new FileInputStream("c:\\Documents\\intel.txt"));
+			DataInputStream dis = new DataInputStream(new FileInputStream("D:\\Documentos\\intel.txt"));
 
 			byte[] datainBytes = new byte[dis.available()];
 			dis.readFully(datainBytes);
