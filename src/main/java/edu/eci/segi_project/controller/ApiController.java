@@ -20,7 +20,7 @@ public class ApiController {
 			
 			
 			
-			DataInputStream dis = new DataInputStream(new FileInputStream("D:\\Documentos\\intel.txt"));
+			DataInputStream dis = new DataInputStream(new FileInputStream("/var/lib/intelmq/bots/file-output/events.txt"));
 
 			byte[] datainBytes = new byte[dis.available()];
 			dis.readFully(datainBytes);
